@@ -10,7 +10,7 @@ metadata:
 labels:
   component: ci
 spec:
-  serviceAccountName: Compute Engine default service account
+  #serviceAccountName: Compute Engine default service account
   containers:
   - name: gcloud-kubectl-docker
     image: gcr.io/disco-domain-402111/gcloud-kubectl-docker
