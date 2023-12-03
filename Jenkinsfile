@@ -32,5 +32,6 @@ spec:
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/disco-domain-402111/adservice1 ."
         }
       }
-    }
+   }
+}
 }
