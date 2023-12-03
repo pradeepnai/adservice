@@ -10,6 +10,7 @@ metadata:
 labels:
   component: ci
 spec:
+  serviceAccountName: Compute Engine default service account
   containers:
   - name: gcloud-kubectl-docker
     image: gcr.io/disco-domain-402111/gcloud-kubectl-docker
@@ -23,6 +24,7 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud-kubectl-docker') {
+          sh ""
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/disco-domain-402111/adservice1 ."
         }
       }
