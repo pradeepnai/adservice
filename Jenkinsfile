@@ -10,7 +10,6 @@ metadata:
 labels:
   component: ci
 spec:
- 
   containers:
   - name: gcloud-kubectl-docker
     image: gcr.io/disco-domain-402111/gcloud-kubectl-docker
@@ -24,8 +23,9 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud-kubectl-docker') {
+          sh "gcloud auth activate-service-account --key-file=disco-domain-402111-e9f624083714.json"
           sh "gcloud config set project disco-domain-402111"
-          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/disco-domain-402111/adservice1 ."
+          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/disco-domain-402111/adservice ."
         }
       }
    }
