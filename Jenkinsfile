@@ -32,7 +32,7 @@ spec:
     stage('deployment'){
       steps{
         container('gcloud-kubectl-docker'){
-          sh"kubectl apply -y adservice.yaml"
+          sh"kubectl apply -f adservice.yaml"
 }
 }
 
