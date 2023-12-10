@@ -29,5 +29,9 @@ spec:
         }
       }
    }
+    stage('deployment'){
+      steps{
+        container('gcloud-kubectl-docker'){
+          sh"gcloud kubectl apply -y kubernetes-manifests/adservice.yaml"
 }
 }
