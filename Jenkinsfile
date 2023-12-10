@@ -32,6 +32,7 @@ spec:
     stage('deployment'){
       steps{
         container('gcloud-kubectl-docker'){
+          sh"gcloud container clusters get-credentials cluster-2 --zone us-east1-b --project disco-domain-402111"
           sh"kubectl apply -f adservice.yaml"
 }
 }
