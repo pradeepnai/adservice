@@ -35,3 +35,7 @@ spec:
           sh"gcloud kubectl apply -y adservice.yaml"
 }
 }
+
+      }
+    }
+  }
